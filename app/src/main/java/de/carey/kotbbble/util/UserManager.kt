@@ -10,8 +10,8 @@ class UserManager private constructor() {
 
     companion object {
         val instance = Holder.INSTANCE
-        val KEY_CURRENT_USER = "current_user"
-        var user: User? = null
+        private val KEY_CURRENT_USER = "current_user"
+        private var user: User? = null
     }
 
     fun getUser(): User? {

@@ -11,7 +11,6 @@ import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Build
 import android.telephony.TelephonyManager
-import android.text.TextUtils
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.View
@@ -213,8 +212,15 @@ object Utils {
                 }
             }
 
+            for(info in am.runningAppProcesses){
+                if (info.pid == android.os.Process.myPid()) {
+                    processName = info.processName
+                    break
+                }
+            }
+
             //go home
-            if (TextUtils.isEmpty(processName)) {
+            if (processName.isNullOrEmpty()) {
                 return processName
             }
 

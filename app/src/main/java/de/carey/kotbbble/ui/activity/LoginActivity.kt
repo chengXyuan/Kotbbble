@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivityForResult
 
 
-class LoginActivity : BaseMVPActivity<LoginPresenter>(), ILoginView {
+class LoginActivity : BaseMVPActivity<ILoginView, LoginPresenter>(), ILoginView {
 
     companion object {
         val EXTRA_AUTHORIZE_CODE = "extra_authorize_code"
@@ -42,4 +42,9 @@ class LoginActivity : BaseMVPActivity<LoginPresenter>(), ILoginView {
             } else {
                 super.onActivityResult(requestCode, resultCode, data)
             }
+
+    override fun getUserInfoSuccess() {
+        finish()
+    }
+
 }

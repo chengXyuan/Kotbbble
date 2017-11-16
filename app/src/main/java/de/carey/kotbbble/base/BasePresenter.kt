@@ -7,12 +7,12 @@ import io.reactivex.Flowable
 import org.greenrobot.eventbus.EventBus
 
 
-abstract class BasePresenter {
+abstract class BasePresenter<V : BaseView> {
 
-    open lateinit var mView: BaseView
+    open lateinit var mView: V
     open lateinit var mNetRepository: NetRepository
 
-    fun setView(view: BaseView) {
+    fun setView(view: V) {
         mView = view
         mNetRepository = NetRepository.instance
         onAttached()

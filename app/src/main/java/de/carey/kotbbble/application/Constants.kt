@@ -1,4 +1,5 @@
 package de.carey.kotbbble.application
+
 interface Constants {
     companion object {
         val CLIENT_ID = "3542445d22853ca416185b1274bec04d2e74aaeb73b96e06ab0c509b262f9ae2"
@@ -7,6 +8,8 @@ interface Constants {
 
         val REDIRECT_URI = "https://www.google.com/"
         val OAUTH_URL = "https://dribbble.com/oauth/authorize?client_id=$CLIENT_ID&redirect_uri=$REDIRECT_URI&scope=public write comment upload"
+
+        val BUGLY_ID = ""
 
         val SP_ACCESS_TOKEN = "sp_access_token"
     }

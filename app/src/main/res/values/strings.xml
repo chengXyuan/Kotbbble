@@ -3,4 +3,10 @@
     <string name="login">登录</string>
     <string name="hello_dribbble">Hello Dribbble！</string>
     <string name="dribbble_login_tips">登录 Dribbble 立即体验所有功能</string>
+    <string name="home">首页</string>
+    <string name="follow">关注</string>
+    <string name="bucket">收藏</string>
+    <string name="like">喜欢</string>
+    <string name="setting">设置</string>
+    <string name="about">关于</string>
 </resources>
