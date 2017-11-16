@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Kotbbble</string>
+    <string name="login">登录</string>
+    <string name="hello_dribbble">Hello Dribbble！</string>
+    <string name="dribbble_login_tips">登录 Dribbble 立即体验所有功能</string>
+</resources>
