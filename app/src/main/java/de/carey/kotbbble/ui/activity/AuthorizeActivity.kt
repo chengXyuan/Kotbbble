@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import de.carey.kotbbble.application.Constants
+import de.carey.kotbbble.app.Constants
 import kotlinx.android.synthetic.main.activity_web.*
 
 class AuthorizeActivity : WebActivity() {

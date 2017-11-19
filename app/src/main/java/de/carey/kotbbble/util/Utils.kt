@@ -212,7 +212,7 @@ object Utils {
                 }
             }
 
-            for(info in am.runningAppProcesses){
+            for (info in am.runningAppProcesses) {
                 if (info.pid == android.os.Process.myPid()) {
                     processName = info.processName
                     break
@@ -236,7 +236,12 @@ object Utils {
     /**
      * 判断当前进程是否是主进程
      */
-    fun isMainProcess(context: Context): Boolean = context.packageName == getProcessName(context)
+    fun isMainProcess(context: Context): Boolean {
+        val am = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val myPid = android.os.Process.myPid()
+        val packageName = context.packageName
+        return am.runningAppProcesses.any { packageName == it.processName && myPid == it.pid }
+    }
 
 
 }

@@ -7,7 +7,7 @@ import com.facebook.drawee.view.SimpleDraweeView
 import com.facebook.imagepipeline.request.ImageRequest
 import com.facebook.imagepipeline.request.ImageRequestBuilder
 import de.carey.kotbbble.R
-import de.carey.kotbbble.application.App
+import de.carey.kotbbble.app.App
 
 
 object ImageLoader {

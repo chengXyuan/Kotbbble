@@ -1,7 +1,7 @@
 package de.carey.kotbbble.base
 
 import com.google.gson.JsonParseException
-import de.carey.kotbbble.application.App
+import de.carey.kotbbble.app.App
 import de.carey.kotbbble.util.Utils
 import io.reactivex.subscribers.DisposableSubscriber
 import org.json.JSONException

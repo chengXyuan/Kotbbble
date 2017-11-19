@@ -1,6 +1,6 @@
 package de.carey.kotbbble.api
 
-import de.carey.kotbbble.application.App
+import de.carey.kotbbble.app.App
 import de.carey.kotbbble.util.Utils
 import okhttp3.Interceptor
 import okhttp3.Response

@@ -1,6 +1,7 @@
 package de.carey.kotbbble.entity
 
 import java.io.Serializable
+import java.util.*
 
 data class Token(val access_token: String,
                  val token_type: String,
@@ -35,7 +36,78 @@ data class User(val id: Int,
                 val projects_url: String,
                 val shots_url: String,
                 val teams_url: String,
-                val created_at: String,
-                val updated_at: String)
+                val created_at: Date,
+                val updated_at: Date) : Serializable
 
-data class Links(val web: String, val twitter: String)
+data class Links(val web: String, val twitter: String) : Serializable
+
+data class Shot(val id: Int,
+                val title: String,
+                val description: String?,
+                val width: Int,
+                val height: Int,
+                val images: Image,
+                val views_count: Int,
+                val likes_count: Int,
+                val comments_count: Int,
+                val attachments_count: Int,
+                val rebounds_count: Int,
+                val buckets_count: Int,
+                val created_at: Date,
+                val updated_at: Date,
+                val html_url: String,
+                val attachments_url: String,
+                val buckets_url: String,
+                val comments_url: String,
+                val likes_url: String,
+                val projects_url: String,
+                val rebounds_url: String,
+                val rebound_source_url: String,
+                val animated: Boolean,
+                val user: User,
+                val team: Team,
+                val tags: List<String>?) : Serializable
+
+data class Image(val hidpi: String?,
+                 val normal: String,
+                 val teaser: String) : Serializable
+
+data class Team(val id: Int,
+                val name: String,
+                val username: String?,
+                val html_url: String,
+                val avatar_url: String,
+                val bio: String,
+                val location: String?,
+                val links: Links?,
+                val buckets_count: Int,
+                val comments_received_count: Int,
+                val followers_count: Int,
+                val followings_count: Int,
+                val likes_count: Int,
+                val likes_received_count: Int,
+                val projects_count: Int,
+                val rebounds_received_count: Int,
+                val shots_count: Int,
+                val can_upload_shot: Boolean,
+                val type: String,
+                val pro: Boolean,
+                val buckets_url: String,
+                val followers_url: String,
+                val following_url: String,
+                val likes_url: String,
+                val projects_url: String,
+                val shots_url: String,
+                val created_at: Date,
+                val updated_at: Date,
+                val members_count: Int,
+                val members_url: String,
+                val team_shots_url: String) : Serializable
+
+data class Comment(val id: Int,
+                   val body: String,
+                   val likes_count: Int,
+                   val likes_url: String,
+                   val created_at: Date,
+                   val updated_at: Date,
+                   val user: User)

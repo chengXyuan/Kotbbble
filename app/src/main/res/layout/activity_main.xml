@@ -27,7 +27,6 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_menu_white_24dp"
-                android:tint="@color/icon"
                 tools:ignore="ContentDescription"/>
         </LinearLayout>
 
@@ -44,7 +43,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:scrollbars="none"
-        app:headerLayout="@layout/layout_navigation_header"
+        app:headerLayout="@layout/nav_header"
         app:itemBackground="@drawable/menu_item_bg"
         app:itemIconTint="@color/menu_icon"
         app:itemTextColor="@color/menu_icon"

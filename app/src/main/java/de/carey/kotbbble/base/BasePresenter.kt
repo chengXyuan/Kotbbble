@@ -32,12 +32,9 @@ abstract class BasePresenter<V : BaseView> {
 
     open fun useEventBus() = false
 
-    protected inline fun <T> Flowable<T>.deal(crossinline success: (T) -> Unit) {
-        deal(success, { errorCode, msg -> Logger.d("code=$errorCode, msg: $msg") })
-    }
-
-    protected inline fun <T> Flowable<T>.deal(crossinline success: (T) -> Unit,
-                                              crossinline failure: (code: Int, msg: String) -> Unit) {
+    protected fun <T> Flowable<T>.deal(success: (T) -> Unit,
+                                       failure: (code: Int, msg: String) -> Unit = { errorCode, msg -> Logger.d("code=$errorCode, msg: $msg") },
+                                       complete: () -> Unit = {}) {
         this.compose(mView.bindLifecycle())
                 .compose(RxSchedulers.threadModeFlowable())
                 .subscribe(object : NetSubscriber<T>() {
@@ -47,6 +44,10 @@ abstract class BasePresenter<V : BaseView> {
 
                     override fun onFailure(code: Int, msg: String) {
                         failure(code, msg)
+                    }
+
+                    override fun onComplete() {
+                        complete()
                     }
                 })
     }

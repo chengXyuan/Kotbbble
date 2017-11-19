@@ -1,4 +1,4 @@
-package de.carey.kotbbble.application
+package de.carey.kotbbble.app
 
 interface Constants {
     companion object {
@@ -12,5 +12,7 @@ interface Constants {
         val BUGLY_ID = ""
 
         val SP_ACCESS_TOKEN = "sp_access_token"
+
+        val PAGE_SIZE = 20
     }
 }

@@ -1,4 +1,4 @@
-package de.carey.kotbbble.application
+package de.carey.kotbbble.app
 
 import android.app.Application
 import android.os.Environment
@@ -10,6 +10,7 @@ import com.tencent.bugly.beta.Beta
 import de.carey.kotbbble.BuildConfig
 import de.carey.kotbbble.R
 import de.carey.kotbbble.ui.activity.MainActivity
+import de.carey.kotbbble.util.Utils
 import de.carey.kotbbble.util.delegate.NotNullSingleValueVar
 
 
@@ -23,16 +24,16 @@ class App : Application() {
         super.onCreate()
         instance = this
         //只在主进程里进行初始化,避免重复初始化
-        //if (Utils.isMainProcess(this)) {
-        //Fresco
-        Thread { Fresco.initialize(this) }.start()
-        //Bugly
-        initBugly()
-        //Logger
-        Logger.addLogAdapter(object : AndroidLogAdapter() {
-            override fun isLoggable(priority: Int, tag: String?) = BuildConfig.DEBUG
-        })
-        //}
+        if (Utils.isMainProcess(this)) {
+            //Fresco
+            Thread { Fresco.initialize(this) }.start()
+            //Bugly
+            initBugly()
+            //Logger
+            Logger.addLogAdapter(object : AndroidLogAdapter() {
+                override fun isLoggable(priority: Int, tag: String?) = BuildConfig.DEBUG
+            })
+        }
     }
 
     private fun initBugly() {

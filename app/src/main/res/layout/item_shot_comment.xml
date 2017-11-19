@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:placeholderImage="@drawable/img_default_avatar"
+        app:roundAsCircle="true"
+        app:roundingBorderColor="@color/white"
+        app:roundingBorderWidth="1.5dp"/>
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:textColor="@color/text_dark_black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_avatar"
+        tools:text="Dragos Axenti"/>
+
+    <TextView
+        android:id="@+id/tv_comment_body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+        tools:text="So nice... Very good teamwork! Congrats!"/>
+
+    <TextView
+        android:id="@+id/tv_comment_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tv_user_name"
+        android:layout_below="@id/tv_comment_body"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text_grey"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_comment_body"
+        app:layout_constraintTop_toBottomOf="@+id/tv_comment_body"
+        tools:text="13 days ago"/>
+
+    <TextView
+        android:id="@+id/tv_comment_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_favorite_gray_16dp"
+        android:gravity="center"
+        android:textColor="@color/text_grey"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_comment_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="13"/>
+
+</android.support.constraint.ConstraintLayout>

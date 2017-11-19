@@ -21,4 +21,10 @@ class NetRepository private constructor() {
 
     fun getUserInfo(): Flowable<User> = mApiStore.getUserInfo()
 
+    fun getShots(type: String, sort: String, time: String, pageIndex: Int)
+            = mApiStore.getShots(type, sort, time, pageIndex)
+
+    fun getComments(shotId: Int, sort: String?, pageIndex: Int)
+            = mApiStore.getComments(shotId, sort, pageIndex)
+
 }

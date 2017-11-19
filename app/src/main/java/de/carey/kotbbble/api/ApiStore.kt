@@ -1,6 +1,7 @@
 package de.carey.kotbbble.api
 
-import de.carey.kotbbble.application.Constants
+import de.carey.kotbbble.app.Constants
+import de.carey.kotbbble.entity.Shot
 import de.carey.kotbbble.entity.Token
 import de.carey.kotbbble.entity.User
 import io.reactivex.Flowable
@@ -22,10 +23,17 @@ interface ApiStore {
     fun getUserInfo(): Flowable<User>
 
     @GET("shots")
-    fun getShots(): Flowable<ResponseBody>
+    fun getShots(@Query("list") type: String,
+                 @Query("sort") sort: String,
+                 @Query("timeframe") timeFrame: String,
+                 @Query("page") pageIndex: Int,
+                 @Query("per_page") pageSize: Int = Constants.PAGE_SIZE): Flowable<List<Shot>>
 
     @GET("shots/{id}/comments")
-    fun getComments()
+    fun getComments(@Path("id") shotId: Int,
+                    @Query("comments_sort") sort: String?,
+                    @Query("page") pageIndex: Int,
+                    @Query("per_page") pageSize: Int = Constants.PAGE_SIZE): Flowable<ResponseBody>
 
     @POST("shots/{id}/like")
     fun likeShot()

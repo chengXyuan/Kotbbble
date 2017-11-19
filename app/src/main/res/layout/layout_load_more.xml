@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/lay_load_more_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:indeterminate="false"
+            android:indeterminateBehavior="repeat"
+            android:indeterminateDrawable="@drawable/bg_loading"
+            android:indeterminateDuration="600"
+            android:padding="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="正在加载更多数据..."
+            android:textColor="@color/text_black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_load_more_load_fail_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_load_more_fail_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="似乎出了点问题..."
+            android:textColor="@color/text_black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_load_more_fail_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="重新加载"
+            android:textColor="@color/text_blue"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_load_more_no_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="没有更多内容"
+        android:textColor="@color/text_black"
+        android:visibility="gone"/>
+</FrameLayout>

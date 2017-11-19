@@ -2,7 +2,7 @@ package de.carey.kotbbble.util
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import de.carey.kotbbble.application.App
+import de.carey.kotbbble.app.App
 
 
 class SPUtils private constructor() {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_shots"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@color/white"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:stateListAnimator="@drawable/sel_lift_on_touch"
+    tools:targetApi="lollipop">
+
+    <de.carey.kotbbble.widget.AspectRatioLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        app:arl_heightRatio="3"
+        app:arl_widthRatio="4">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_item_shot_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription"/>
+    </de.carey.kotbbble.widget.AspectRatioLayout>
+</android.support.v7.widget.CardView>

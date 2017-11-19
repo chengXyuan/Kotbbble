@@ -5,11 +5,12 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import de.carey.kotbbble.R
-import de.carey.kotbbble.application.Constants
+import de.carey.kotbbble.app.Constants
 import de.carey.kotbbble.base.BaseMVPActivity
 import de.carey.kotbbble.ui.iview.ILoginView
 import de.carey.kotbbble.ui.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.startActivityForResult
 
 
@@ -44,7 +45,7 @@ class LoginActivity : BaseMVPActivity<ILoginView, LoginPresenter>(), ILoginView 
             }
 
     override fun getUserInfoSuccess() {
-        finish()
+        startActivity<MainActivity>()
     }
 
 }

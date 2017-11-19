@@ -2,7 +2,7 @@ package de.carey.kotbbble.api
 
 import android.content.Context
 import de.carey.kotbbble.BuildConfig
-import de.carey.kotbbble.application.App
+import de.carey.kotbbble.app.App
 import de.carey.kotbbble.util.Utils
 import okhttp3.Cache
 import okhttp3.CacheControl
