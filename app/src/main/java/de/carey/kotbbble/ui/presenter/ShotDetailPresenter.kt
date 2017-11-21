@@ -7,6 +7,6 @@ class ShotDetailPresenter : BasePresenter<IShotDetailView>() {
 
     fun getComments(shotId: Int, sort: String?, pageIndex: Int) {
         mNetRepository.getComments(shotId, sort, pageIndex)
-                .deal({})
+                .deal({ data -> mView.showComments(data) })
     }
 }

@@ -37,7 +37,7 @@ open class WebActivity : AppCompatActivity() {
         settings.javaScriptCanOpenWindowsAutomatically = true
         settings.layoutAlgorithm = WebSettings.LayoutAlgorithm.NARROW_COLUMNS
 
-        web_view.webViewClient = object : WebViewClient() {
+        web_view.setWebViewClient(object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
                 view?.loadUrl(url)
                 return true
@@ -46,8 +46,8 @@ open class WebActivity : AppCompatActivity() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 tv_title.text = view?.title
             }
-        }
-        web_view.webChromeClient = object : WebChromeClient() {
+        })
+        web_view.setWebChromeClient(object : WebChromeClient() {
 
             override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 if (newProgress == 100) {
@@ -63,7 +63,7 @@ open class WebActivity : AppCompatActivity() {
             override fun onReceivedTitle(view: WebView?, title: String?) {
                 tv_title.text = title
             }
-        }
+        })
         web_view.loadUrl(intent.getStringExtra(WEB_LOAD_URL))
     }
 

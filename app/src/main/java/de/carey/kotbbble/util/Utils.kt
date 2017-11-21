@@ -9,7 +9,6 @@ import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.net.Uri
-import android.os.Build
 import android.telephony.TelephonyManager
 import android.util.DisplayMetrics
 import android.util.TypedValue
@@ -154,11 +153,7 @@ object Utils {
     @Suppress("DEPRECATION")
     fun getDeviceImei(context: Context): String {
         val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            tm.imei
-        } else {
-            tm.deviceId
-        }
+        return tm.deviceId
     }
 
     /**

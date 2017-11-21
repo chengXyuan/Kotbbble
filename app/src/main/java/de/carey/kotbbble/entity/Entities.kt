@@ -65,7 +65,7 @@ data class Shot(val id: Int,
                 val rebound_source_url: String,
                 val animated: Boolean,
                 val user: User,
-                val team: Team,
+                val team: Team?,
                 val tags: List<String>?) : Serializable
 
 data class Image(val hidpi: String?,

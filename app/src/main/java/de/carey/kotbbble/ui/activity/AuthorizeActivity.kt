@@ -12,7 +12,7 @@ class AuthorizeActivity : WebActivity() {
     @Suppress("OverridingDeprecatedMember")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        web_view.webViewClient = object : WebViewClient() {
+        web_view.setWebViewClient(object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                 if (url.contains("code")) {
                     val code = url.replace("${Constants.REDIRECT_URI}?code=", "")
@@ -25,6 +25,6 @@ class AuthorizeActivity : WebActivity() {
                 }
                 return true
             }
-        }
+        })
     }
 }

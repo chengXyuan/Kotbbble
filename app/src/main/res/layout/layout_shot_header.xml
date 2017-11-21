@@ -5,13 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/shot_header"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/view_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
         android:drawableStart="@drawable/ic_visibility_gray_18dp"
         android:gravity="center"
         android:padding="5dp"
@@ -24,26 +25,42 @@
         android:id="@+id/like_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
         android:drawableStart="@drawable/ic_favorite_gray_18dp"
         android:gravity="center"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_count"
-        app:layout_constraintEnd_toStartOf="@+id/buckets_count"
+        app:layout_constraintEnd_toStartOf="@+id/bucket_count"
         app:layout_constraintStart_toEndOf="@+id/view_count"
         app:layout_constraintTop_toTopOf="@+id/view_count"
         tools:text="10"/>
 
     <TextView
-        android:id="@+id/buckets_count"
+        android:id="@+id/bucket_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
         android:drawableStart="@drawable/ic_bucket_gray_18dp"
         android:gravity="center"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/like_count"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_attachment_count"
         app:layout_constraintStart_toEndOf="@+id/like_count"
         app:layout_constraintTop_toTopOf="@+id/like_count"
+        tools:text="10"/>
+
+    <TextView
+        android:id="@+id/tv_attachment_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:drawableStart="@drawable/ic_attachment_gray_18dp"
+        android:gravity="center"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bucket_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bucket_count"
+        app:layout_constraintTop_toTopOf="@+id/bucket_count"
         tools:text="10"/>
 
     <View
@@ -63,9 +80,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/divider1"
         app:placeholderImage="@drawable/img_default_avatar"
-        app:roundAsCircle="true"
-        app:roundingBorderColor="@color/white"
-        app:roundingBorderWidth="2dp"/>
+        app:roundAsCircle="true"/>
 
     <TextView
         android:id="@+id/tv_by"
@@ -73,9 +88,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="by "
+        android:text="@string/word_by"
         android:textColor="@color/text_black"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/iv_avatar"
         app:layout_constraintTop_toTopOf="@id/iv_avatar"/>
 
@@ -85,6 +100,7 @@
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:textColor="@color/text_blue"
+        android:textSize="15sp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_by"
         app:layout_constraintStart_toEndOf="@id/tv_by"
         tools:text="Lily"/>
@@ -94,9 +110,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="for "
+        android:text="@string/word_for"
         android:textColor="@color/text_black"
-        android:textSize="12sp"
+        android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_by"
         app:layout_constraintStart_toEndOf="@id/tv_user_name"/>
 
@@ -106,6 +123,7 @@
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:textColor="@color/text_blue"
+        android:textSize="15sp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_by"
         app:layout_constraintStart_toEndOf="@id/tv_for"
         tools:text="Fireart Studio"/>
@@ -116,9 +134,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
-        android:text="in "
+        android:text="@string/word_in"
         android:textColor="@color/text_black"
-        android:textSize="12sp"
+        android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
         app:layout_constraintStart_toEndOf="@id/iv_avatar"/>
 
@@ -128,6 +147,8 @@
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:textColor="@color/text_black"
+        android:textSize="15sp"
+        android:visibility="gone"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_in"
         app:layout_constraintStart_toEndOf="@id/tv_in"
         tools:text="Los"/>
@@ -138,10 +159,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
-        android:text="on "
+        android:text="@string/word_on"
         android:textColor="@color/text_black"
-        android:textSize="12sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_in"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
         app:layout_constraintStart_toEndOf="@id/tv_location"/>
 
     <TextView
@@ -150,7 +171,8 @@
         android:layout_height="wrap_content"
         android:maxLines="1"
         android:textColor="@color/text_black"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_in"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_on"
         app:layout_constraintStart_toEndOf="@id/tv_on"
         tools:text="Sep 12, 2017"/>
 
@@ -169,7 +191,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@{Html.fromHtml(shot.description)}"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider2"
@@ -185,6 +207,7 @@ Thank you!"/>
         android:layout_height="1px"
         android:layout_marginTop="8dp"
         android:background="@color/divider"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_description"/>
@@ -197,6 +220,7 @@ Thank you!"/>
         android:layout_marginTop="8dp"
         android:textColor="@color/text_dark_black"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider3"
         tools:text="104 Responses"/>
 
@@ -216,7 +240,7 @@ Thank you!"/>
             android:button="@null"
             android:checked="true"
             android:tag="@null"
-            android:text="oldest"
+            android:text="@string/oldest"
             android:textColor="@color/grey_checked_black"
             android:textSize="12sp"/>
 
@@ -227,7 +251,7 @@ Thank you!"/>
             android:layout_marginStart="8dp"
             android:button="@null"
             android:tag="newest"
-            android:text="newest"
+            android:text="@string/newest"
             android:textColor="@color/grey_checked_black"
             android:textSize="12sp"/>
 
@@ -238,7 +262,7 @@ Thank you!"/>
             android:layout_marginStart="8dp"
             android:button="@null"
             android:tag="liked"
-            android:text="liked"
+            android:text="@string/liked"
             android:textColor="@color/grey_checked_black"
             android:textSize="12sp"/>
     </RadioGroup>

@@ -10,4 +10,11 @@
     <string name="setting">设置</string>
     <string name="about">关于</string>
     <string name="click_to_try_again">点击重试</string>
+    <string name="word_by">by&#160;</string>
+    <string name="word_for">for&#160;</string>
+    <string name="word_in">in&#160;</string>
+    <string name="word_on">on&#160;</string>
+    <string name="oldest">oldest</string>
+    <string name="newest">newest</string>
+    <string name="liked">liked</string>
 </resources>

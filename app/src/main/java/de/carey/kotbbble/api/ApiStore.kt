@@ -1,11 +1,11 @@
 package de.carey.kotbbble.api
 
 import de.carey.kotbbble.app.Constants
+import de.carey.kotbbble.entity.Comment
 import de.carey.kotbbble.entity.Shot
 import de.carey.kotbbble.entity.Token
 import de.carey.kotbbble.entity.User
 import io.reactivex.Flowable
-import okhttp3.ResponseBody
 import retrofit2.http.*
 
 
@@ -33,7 +33,7 @@ interface ApiStore {
     fun getComments(@Path("id") shotId: Int,
                     @Query("comments_sort") sort: String?,
                     @Query("page") pageIndex: Int,
-                    @Query("per_page") pageSize: Int = Constants.PAGE_SIZE): Flowable<ResponseBody>
+                    @Query("per_page") pageSize: Int = Constants.PAGE_SIZE): Flowable<List<Comment>>
 
     @POST("shots/{id}/like")
     fun likeShot()

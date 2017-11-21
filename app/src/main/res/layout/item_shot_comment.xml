@@ -13,9 +13,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         app:placeholderImage="@drawable/img_default_avatar"
-        app:roundAsCircle="true"
-        app:roundingBorderColor="@color/white"
-        app:roundingBorderWidth="1.5dp"/>
+        app:roundAsCircle="true"/>
 
     <TextView
         android:id="@+id/tv_user_name"
